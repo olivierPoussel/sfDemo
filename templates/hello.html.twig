@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+    <h2>hello h2</h2>
+    {# {{dump(items)}} #}
+    <ul>
+        {% for prenom in items %}
+            <li>{{prenom}}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

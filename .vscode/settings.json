@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 26,
+    "files.associations": {
+        "*.html": "twig"
+    },
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+}

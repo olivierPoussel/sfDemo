@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserDoctrine index{% endblock %}
+
+{% block body %}
+    <h1>UserDoctrine index</h1>
+
+    <a class="btn btn-primary my-3" href="{{ path('user_doctrine_new') }}">Create new</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_doctrine in user_doctrines %}
+            <tr>
+                <td>{{ user_doctrine.id }}</td>
+                <td>{{ user_doctrine.name }}</td>
+                <td>{{ user_doctrine.email }}</td>
+                <td>{{ user_doctrine.date ? user_doctrine.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{{ path('user_doctrine_show', {'id': user_doctrine.id}) }}">show</a>
+                    <a class="btn btn-warning" href="{{ path('user_doctrine_edit', {'id': user_doctrine.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

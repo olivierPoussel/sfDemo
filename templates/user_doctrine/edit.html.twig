@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UserDoctrine{% endblock %}
+
+{% block body %}
+    <h1>Edit UserDoctrine</h1>
+
+    {{ include('user_doctrine/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-primary my-3" href="{{ path('user_doctrine_index') }}">back to list</a>
+
+    {{ include('user_doctrine/_delete_form.html.twig') }}
+{% endblock %}

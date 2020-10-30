@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserDoctrine{% endblock %}
+
+{% block body %}
+    <h1>UserDoctrine</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user_doctrine.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ user_doctrine.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user_doctrine.email }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ user_doctrine.date ? user_doctrine.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex align-items-center">
+        <a class="btn btn-primary my-3" href="{{ path('user_doctrine_index') }}">back to list</a>
+
+        <a class="btn btn-warning my-3 mx-3" href="{{ path('user_doctrine_edit', {'id': user_doctrine.id}) }}">edit</a>
+
+        {{ include('user_doctrine/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

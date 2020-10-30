@@ -1,0 +1,5 @@
+user:
+  fields:
+    name: Nom
+    email: E-mail
+    date: Date de naissance
